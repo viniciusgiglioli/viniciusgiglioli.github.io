@@ -1,10 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #1a1a1a;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    color: #fff;
 }
 
 .container {
@@ -13,45 +14,13 @@ body {
     max-width: 1400px;
     width: 100%;
     min-height: 100vh;
-    position: relative;
-}
-
-.legend {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
-}
-
-.legend h3 {
-    margin: 0 0 10px;
-    font-size: 16px;
-    color: #333;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    font-size: 14px;
-}
-
-.color-box {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
 }
 
 .sidebar {
     width: 200px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #2a2a2a;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     height: 100vh;
     position: sticky;
     top: 0;
@@ -75,6 +44,7 @@ body {
     color: #fff;
     text-align: left;
     transition: opacity 0.3s;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho */
 }
 
 .tab-button:hover {
@@ -82,17 +52,18 @@ body {
 }
 
 .tab-button.active {
-    font-weight: bold;
+    font-weight: bold; /* Apenas negrito, sem alterar tamanho */
 }
 
 .content {
     flex: 1;
     padding: 20px;
     text-align: center;
+    background-color: #2a2a2a;
 }
 
 h1 {
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -101,7 +72,10 @@ h1 {
 }
 
 .tab-content.active {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
 #prompt-engineering .flashcard { background-color: #FFD700; }
@@ -155,11 +129,4 @@ h1 {
 
 .flashcard.flipped .back {
     transform: rotateY(0);
-}
-
-.tab-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 20px;
-    justify-items: center;
 }
