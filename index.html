@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Salesforce Agentforce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcards Salesforce Agentforce</h1>
+        
+        <!-- Legenda de Cores -->
+        <div class="legend">
+            <h3>Legenda de Cores</h3>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #FFD700;"></span>
+                Prompt Engineering
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #1E90FF;"></span>
+                Agentforce Concepts
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #32CD32;"></span>
+                Agentforce and Data Cloud
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #800080;"></span>
+                Agentforce and Service Cloud
+            </div>
+            <div class="legend-item">
+                <span class="color-box" style="background-color: #FFA500;"></span>
+                Agentforce and Sales Cloud
+            </div>
+        </div>
+
+        <!-- Abas dos Temas -->
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('prompt-engineering')">Prompt Engineering</button>
+            <button class="tab-button" onclick="openTab('agentforce-concepts')">Agentforce Concepts</button>
+            <button class="tab-button" onclick="openTab('data-cloud')">Agentforce and Data Cloud</button>
+            <button class="tab-button" onclick="openTab('service-cloud')">Agentforce and Service Cloud</button>
+            <button class="tab-button" onclick="openTab('sales-cloud')">Agentforce and Sales Cloud</button>
+        </div>
+
+        <!-- Decks de Flashcards -->
+        <div id="prompt-engineering" class="tab-content" style="display: none;">
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">O que é o Prompt Builder?</div>
+                <div class="back">Ferramenta do Salesforce que cria prompts reutilizáveis para LLMs, integrando IA aos fluxos de trabalho. Configurado no Setup (Einstein Generative AI).</div>
+            </div>
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">O que faz o modelo Geração de Campo?</div>
+                <div class="back">Gera conteúdo para campos específicos em registros (ex.: resumo em um campo). Configurado no Prompt Builder.</div>
+            </div>
+            <!-- Adicione mais flashcards para Prompt Engineering -->
+        </div>
+
+        <div id="agentforce-concepts" class="tab-content" style="display: none;">
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">O que é o Einstein Copilot?</div>
+                <div class="back">Assistente conversacional de IA que executa ações e responde perguntas no Salesforce. Configurado no Copilot Builder.</div>
+            </div>
+            <!-- Adicione mais flashcards para Agentforce Concepts -->
+        </div>
+
+        <div id="data-cloud" class="tab-content" style="display: none;">
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">O que é o Data Cloud?</div>
+                <div class="back">Unifica dados de várias fontes para insights acionáveis. Configurado no Salesforce Data Cloud.</div>
+            </div>
+            <!-- Adicione mais flashcards para Data Cloud -->
+        </div>
+
+        <div id="service-cloud" class="tab-content" style="display: none;">
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">O que é o Einstein for Service?</div>
+                <div class="back">Conjunto de recursos de IA no Service Cloud para melhorar o atendimento. Configurado no Setup (Einstein for Service).</div>
+            </div>
+            <!-- Adicione mais flashcards para Service Cloud -->
+        </div>
+
+        <div id="sales-cloud" class="tab-content" style="display: none;">
+            <div class="flashcard" onclick="flipCard(this)">
+                <div class="front">O que é o Einstein for Sales?</div>
+                <div class="back">Conjunto de recursos de IA no Sales Cloud para otimizar vendas. Configurado no Setup (Einstein for Sales).</div>
+            </div>
+            <!-- Adicione mais flashcards para Sales Cloud -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
