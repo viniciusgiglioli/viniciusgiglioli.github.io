@@ -8,6 +8,16 @@
 </head>
 <body>
     <div class="container">
+        <!-- Botões de Língua (Topo) -->
+        <div class="language-switch">
+            <button class="lang-button" onclick="switchLanguage('pt')">
+                <img src="https://flagcdn.com/16x12/br.png" alt="Português">
+            </button>
+            <button class="lang-button" onclick="switchLanguage('en')">
+                <img src="https://flagcdn.com/16x12/us.png" alt="English">
+            </button>
+        </div>
+
         <!-- Lista de Temas (Esquerda) -->
         <div class="sidebar">
             <ul class="tabs">
@@ -23,215 +33,215 @@
         <div class="content">
             <h1>Flashcards Salesforce Agentforce</h1>
             <div id="prompt-engineering" class="tab-content">
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the Prompt Builder?" data-back-en="A Salesforce tool that creates reusable prompts for LLMs, integrating AI into workflows. Configured in Setup (Einstein Generative AI).">
                     <div class="front">O que é o Prompt Builder?</div>
                     <div class="back">Ferramenta do Salesforce que cria prompts reutilizáveis para LLMs, integrando IA aos fluxos de trabalho. Configurado no Setup (Einstein Generative AI).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What does the Field Generation model do?" data-back-en="Generates content for specific fields in records (e.g., summary in a field). Configured in Prompt Builder.">
                     <div class="front">O que faz o modelo Geração de Campo?</div>
                     <div class="back">Gera conteúdo para campos específicos em registros (ex.: resumo em um campo). Configurado no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the Record Summary model?" data-back-en="Summarizes information from an entire record. Used in Prompt Builder for overviews.">
                     <div class="front">O que é o modelo Resumo de Registro?</div>
                     <div class="back">Sumariza informações de um registro inteiro. Usado no Prompt Builder para visões gerais.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the function of the Flex model?" data-back-en="Integrates data from multiple objects (standard and custom) for complex prompts. Configured in Prompt Builder.">
                     <div class="front">Qual a função do modelo Flex?</div>
                     <div class="back">Integra dados de múltiplos objetos (padrão e personalizados) para prompts complexos. Configurado no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the Sales Email model?" data-back-en="Creates personalized emails with Salesforce data. Configured in Prompt Builder.">
                     <div class="front">O que é o modelo E-mail de Vendas?</div>
                     <div class="back">Cria e-mails personalizados com dados do Salesforce. Configurado no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What are Merge Fields?" data-back-en="Variables that integrate data from records or external services into prompts. Configured in Prompt Builder.">
                     <div class="front">O que são Campos de Mesclagem?</div>
                     <div class="back">Variáveis que integram dados de registros ou serviços externos em prompts. Configuradas no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Dynamic Grounding?" data-back-en="Automatically incorporates record data into prompts. Configured in Prompt Builder or Draft with Einstein.">
                     <div class="front">O que é Ancoragem Dinâmica?</div>
                     <div class="back">Incorpora dados de registros automaticamente em prompts. Configurada no Prompt Builder ou Draft with Einstein.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="Which hyperparameters can be adjusted in Model Playground?" data-back-en="Temperature (creativity), Frequency Penalty (word repetition), Presence Penalty (idea repetition). Configured in Model Playground.">
                     <div class="front">Quais hiperparâmetros podem ser ajustados no Model Playground?</div>
                     <div class="back">Temperatura (criatividade), Penalidade de Frequência (repetição de palavras), Penalidade de Presença (repetição de ideias). Configurados no Model Playground.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What causes token limit errors?" data-back-en="Variability of tokens in dynamic prompts per record. Managed by optimizing prompts in Prompt Builder.">
                     <div class="front">O que causa erros de limite de tokens?</div>
                     <div class="back">Variabilidade de tokens em prompts dinâmicos por registro. Gerenciado otimizando prompts no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is a Screen Flow in Prompt Engineering?" data-back-en="A flow with custom UX that collects data for prompts. Configured in Flow Builder with 'Prompt Template' action.">
                     <div class="front">O que é um Fluxo de Tela no Prompt Engineering?</div>
-                    <div class="back">Fluxo com UX personalizada que coleta dados para prompts. Configurado no Flow Builder com ação "Prompt Template".</div>
+                    <div class="back">Fluxo com UX personalizada que coleta dados para prompts. Configurado no Flow Builder com ação 'Prompt Template'.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is a Data Cloud-triggered Flow?" data-back-en="A flow that integrates unified data from Data Cloud into prompts. Configured in Flow Builder.">
                     <div class="front">O que é um Fluxo disparado pelo Data Cloud?</div>
                     <div class="back">Fluxo que integra dados unificados do Data Cloud em prompts. Configurado no Flow Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How to integrate REST API service data into prompts?" data-back-en="Use merge fields from External Service Record. Configured in Prompt Builder.">
                     <div class="front">Como integrar dados de um serviço REST API em prompts?</div>
                     <div class="back">Usar campos de mesclagem de Registro de Serviço Externo. Configurado no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is required to access generative AI resources?" data-back-en="Generative AI User permission set. Configured in Permission Sets in Setup.">
                     <div class="front">O que é necessário para acessar recursos de IA generativa?</div>
                     <div class="back">Conjunto de permissões de Usuário de IA Generativa. Configurado em Permission Sets no Setup.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What happens if there is no related list in a prompt?" data-back-en="The prompt does not generate a response, as it depends on the data. Configured in Prompt Builder.">
                     <div class="front">O que acontece se não houver lista relacionada em um prompt?</div>
                     <div class="back">O prompt não gera resposta, pois depende dos dados. Configurado no Prompt Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="Which technique improves prompt contextualization?" data-back-en="Use role-play in the prompt to provide context to the LLM. Configured in Prompt Builder.">
                     <div class="front">Qual técnica melhora a contextualização de prompts?</div>
                     <div class="back">Usar role-play no prompt para dar contexto ao LLM. Configurado no Prompt Builder.</div>
                 </div>
             </div>
 
             <div id="agentforce-concepts" class="tab-content">
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein Copilot?" data-back-en="An AI conversational assistant that executes actions and answers questions in Salesforce. Configured in Copilot Builder.">
                     <div class="front">O que é o Einstein Copilot?</div>
                     <div class="back">Assistente conversacional de IA que executa ações e responde perguntas no Salesforce. Configurado no Copilot Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the Einstein Trust Layer?" data-back-en="A security layer that protects data and audits AI. Configured in Setup (Einstein Generative AI).">
                     <div class="front">O que é a Camada de Confiança Einstein?</div>
                     <div class="back">Camada de segurança que protege dados e audita IA. Configurada no Setup (Einstein Generative AI).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Data Masking?" data-back-en="Hides sensitive data in prompts and responses. Configured in Einstein Trust Layer.">
                     <div class="front">O que é Mascaramento de Dados?</div>
                     <div class="back">Oculta dados sensíveis em prompts e respostas. Configurado na Camada de Confiança Einstein.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What are Content Moderation Rules?" data-back-en="Filter Copilot responses to comply with company policies. Configured in Einstein Trust Layer.">
                     <div class="front">O que são Regras de Moderação de Conteúdo?</div>
                     <div class="back">Filtram respostas do Copilot para seguir políticas da empresa. Configuradas na Camada de Confiança.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Secure Dynamic Grounding?" data-back-en="Integrates record data into Copilot prompts with security. Configured in Einstein Trust Layer.">
                     <div class="front">O que é Ancoragem Dinâmica com Recuperação Segura?</div>
                     <div class="back">Integra dados de registros em prompts do Copilot com segurança. Configurada na Camada de Confiança.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What are Copilot Actions?" data-back-en="Tasks like querying or updating records, configured in Copilot Actions Page.">
                     <div class="front">O que são Ações do Copilot?</div>
                     <div class="back">Tarefas como consultar ou atualizar registros, configuradas na Página de Ações do Copilot.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein Copilot Analytics?" data-back-en="A tool that monitors Copilot usability and actions. Configured in Setup (Copilot Analytics).">
                     <div class="front">O que é Einstein Copilot Analytics?</div>
                     <div class="back">Ferramenta que monitora usabilidade e ações do Copilot. Configurada no Setup (Copilot Analytics).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Model Builder?" data-back-en="Integrates external LLMs (e.g., AWS) into Salesforce. Configured in Einstein Studio Model Builder.">
                     <div class="front">O que é o Model Builder?</div>
                     <div class="back">Integra LLMs externos (ex.: AWS) ao Salesforce. Configurado no Einstein Studio Model Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How to configure permissions for Copilot actions?" data-back-en="Assign specific permissions in Permission Sets in Setup (e.g., Record Deletion).">
                     <div class="front">Como configurar permissões para ações do Copilot?</div>
                     <div class="back">Atribuir permissões específicas em Permission Sets no Setup (ex.: Exclusão de Registro).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
-                    <div class="front">O que faz "Enriquecer logs de eventos com dados de conversa"?</div>
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What does 'Enrich event logs with conversation data' do?" data-back-en="Displays Copilot inputs and responses from the last 7 days. Configured in Setup (Einstein Copilot).">
+                    <div class="front">O que faz 'Enriquecer logs de eventos com dados de conversa'?</div>
                     <div class="back">Mostra entradas e respostas do Copilot dos últimos 7 dias. Configurado no Setup (Einstein Copilot).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How to debug a custom Copilot action?" data-back-en="Enable dynamic debugging in Copilot Builder Dynamic Panel to view inputs and outputs.">
                     <div class="front">Como depurar uma ação personalizada do Copilot?</div>
                     <div class="back">Ativar depuração dinâmica no Painel Dinâmico do Copilot Builder para ver entradas e saídas.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What activates the Einstein Trust Layer?" data-back-en="Activate Einstein Generative AI in Setup.">
                     <div class="front">O que ativa a Camada de Confiança Einstein?</div>
                     <div class="back">Ativar Einstein Generative AI no Setup.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How does Copilot process user requests?" data-back-en="Analyzes the request and uses LLM to generate contextual responses. Configured in Copilot Builder.">
                     <div class="front">Como o Copilot processa solicitações de usuários?</div>
                     <div class="back">Analisa a solicitação e usa LLM para gerar respostas contextuais. Configurado no Copilot Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the role of LLM in Copilot actions?" data-back-en="Identifies the best actions and their execution order. Configured in Copilot Builder.">
                     <div class="front">Qual o papel do LLM em ações do Copilot?</div>
                     <div class="back">Identifica as melhores ações e sua ordem de execução. Configurado no Copilot Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How to monitor Copilot usability?" data-back-en="Use Einstein Copilot Analytics for action and interaction reports. Configured in Setup.">
                     <div class="front">Como monitorar a usabilidade do Copilot?</div>
                     <div class="back">Usar Einstein Copilot Analytics para relatórios de ações e interações. Configurado no Setup.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How to configure a custom task in Copilot?" data-back-en="Create a custom flow and link it to a Copilot action in Copilot Builder.">
                     <div class="front">Como configurar uma tarefa personalizada no Copilot?</div>
                     <div class="back">Criar um fluxo personalizado e vinculá-lo a uma ação do Copilot no Copilot Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What ensures responses align with company policies?" data-back-en="Content Moderation Rules in Einstein Trust Layer.">
                     <div class="front">O que garante respostas consistentes com políticas da empresa?</div>
                     <div class="back">Regras de Moderação de Conteúdo na Camada de Confiança Einstein.</div>
                 </div>
             </div>
 
             <div id="data-cloud" class="tab-content">
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Data Cloud?" data-back-en="Unifies data from multiple sources for actionable insights. Configured in Salesforce Data Cloud.">
                     <div class="front">O que é o Data Cloud?</div>
                     <div class="back">Unifica dados de várias fontes para insights acionáveis. Configurado no Salesforce Data Cloud.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What are Data Cloud Triggered Flows?" data-back-en="Flows that use unified data from Data Cloud in prompts. Configured in Flow Builder.">
                     <div class="front">O que são Data Cloud Triggered Flows?</div>
                     <div class="back">Fluxos que usam dados unificados do Data Cloud em prompts. Configurados no Flow Builder.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the Audit Trail in Data Cloud?" data-back-en="Stores prompts and masked data for auditing. Configured in Einstein Trust Layer with Data Cloud.">
                     <div class="front">O que é o Trilho de Auditoria no Data Cloud?</div>
                     <div class="back">Armazena prompts e dados mascarados para auditoria. Configurado na Camada de Confiança com Data Cloud.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="Which API integrates legacy systems with generative AI?" data-back-en="REST API, configured in Setup (API Integrations).">
                     <div class="front">Qual API integra sistemas legados com IA generativa?</div>
                     <div class="back">REST API, configurada no Setup (API Integrations).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is required to store AI audit data?" data-back-en="Provision Data Cloud in Setup.">
                     <div class="front">O que é necessário para armazenar dados de auditoria de IA?</div>
                     <div class="back">Provisionar o Data Cloud no Setup.</div>
                 </div>
             </div>
 
             <div id="service-cloud" class="tab-content">
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein for Service?" data-back-en="A set of AI features in Service Cloud to enhance support. Configured in Setup (Einstein for Service).">
                     <div class="front">O que é o Einstein for Service?</div>
                     <div class="back">Conjunto de recursos de IA no Service Cloud para melhorar o atendimento. Configurado no Setup (Einstein for Service).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Service AI Grounding?" data-back-en="Anchors AI responses to cases, Knowledge, and case notes. Configured in Einstein for Service.">
                     <div class="front">O que é Service AI Grounding?</div>
                     <div class="back">Ancora respostas de IA em casos, Conhecimento e notas de caso. Configurado no Einstein for Service.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What does Einstein Reply Recommendations do?" data-back-en="Suggests responses based on Knowledge articles for chats. Configured in Einstein for Service.">
                     <div class="front">O que faz o Einstein Reply Recommendations?</div>
                     <div class="back">Sugere respostas baseadas em artigos de Conhecimento para chats. Configurado no Einstein for Service.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein Generative Service Replies for Email?" data-back-en="Generates personalized emails based on Knowledge. Configured in Einstein for Service.">
                     <div class="front">O que é Einstein Generative Service Replies for Email?</div>
                     <div class="back">Gera e-mails personalizados baseados em Conhecimento. Configurado no Einstein for Service.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Case Classification?" data-back-en="Suggests values for case fields based on interactions. Configured in Einstein for Service.">
                     <div class="front">O que é Case Classification?</div>
                     <div class="back">Sugere valores para campos de caso com base em interações. Configurado no Einstein for Service.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="Which objects are used in Service AI Grounding?" data-back-en="Case, Knowledge, and Case Notes. Configured in Einstein for Service.">
                     <div class="front">Quais objetos são usados no Service AI Grounding?</div>
                     <div class="back">Caso, Conhecimento e Notas de Caso. Configurado no Einstein for Service.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How to reduce support time with AI?" data-back-en="Use Reply Recommendations and Case Classification in Einstein for Service.">
                     <div class="front">Como reduzir o tempo de atendimento com IA?</div>
                     <div class="back">Usar Reply Recommendations e Case Classification no Einstein for Service.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="How does Copilot assist service agents?" data-back-en="Answers questions based on Knowledge articles. Configured in Copilot Builder.">
                     <div class="front">Como o Copilot ajuda agentes de serviço?</div>
                     <div class="back">Responde perguntas com base em artigos de Conhecimento. Configurado no Copilot Builder.</div>
                 </div>
             </div>
 
             <div id="sales-cloud" class="tab-content">
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein for Sales?" data-back-en="A set of AI features in Sales Cloud to optimize sales. Configured in Setup (Einstein for Sales).">
                     <div class="front">O que é o Einstein for Sales?</div>
                     <div class="back">Conjunto de recursos de IA no Sales Cloud para otimizar vendas. Configurado no Setup (Einstein for Sales).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein Opportunity Scoring?" data-back-en="Ranks opportunities and suggests actions. Configured in Einstein for Sales.">
                     <div class="front">O que é Einstein Opportunity Scoring?</div>
                     <div class="back">Classifica oportunidades e sugere ações. Configurado no Einstein for Sales.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What does Einstein Sales Insights do?" data-back-en="Analyzes calls for competitor mentions and coaching. Configured in Einstein for Sales.">
                     <div class="front">O que faz o Einstein Sales Insights?</div>
                     <div class="back">Analisa chamadas para menções de concorrentes e coaching. Configurado no Einstein for Sales.</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Draft with Einstein?" data-back-en="Creates personalized emails with automatic grounding. Configured in Email Composer (Sales Cloud).">
                     <div class="front">O que é Draft with Einstein?</div>
                     <div class="back">Cria e-mails personalizados com ancoragem automática. Configurado no Email Composer (Sales Cloud).</div>
                 </div>
-                <div class="flashcard" onclick="flipCard(this)">
+                <div class="flashcard" onclick="flipCard(this)" data-front-en="What is Einstein Conversation Insights?" data-back-en="Customizes call insights (e.g., 50 competitors). Configured in Einstein for Sales.">
                     <div class="front">O que é Einstein Conversation Insights?</div>
                     <div class="back">Personaliza insights de chamadas (ex.: 50 concorrentes). Configurado no Einstein for Sales.</div>
                 </div>

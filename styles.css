@@ -16,6 +16,28 @@ body {
     min-height: 100vh;
 }
 
+.language-switch {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.lang-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.lang-button img {
+    width: 24px;
+    height: 18px;
+    border-radius: 3px;
+}
+
 .sidebar {
     width: 200px;
     padding: 20px;
@@ -44,7 +66,7 @@ body {
     color: #fff;
     text-align: left;
     transition: opacity 0.3s;
-    box-sizing: border-box; /* Garante que padding não aumente o tamanho */
+    box-sizing: border-box;
 }
 
 .tab-button:hover {
@@ -52,7 +74,7 @@ body {
 }
 
 .tab-button.active {
-    font-weight: bold; /* Apenas negrito, sem alterar tamanho */
+    font-weight: bold;
 }
 
 .content {
@@ -60,6 +82,7 @@ body {
     padding: 20px;
     text-align: center;
     background-color: #2a2a2a;
+    margin-top: 60px; /* Espaço para os botões de idioma */
 }
 
 h1 {
