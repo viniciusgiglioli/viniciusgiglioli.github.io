@@ -1,7 +1,7 @@
 function openTab(tabId) {
     // Esconde todos os conteúdos das abas
     document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.style.display = 'none';
+        tab.classList.remove('active');
     });
 
     // Remove a classe 'active' de todos os botões
@@ -10,7 +10,7 @@ function openTab(tabId) {
     });
 
     // Mostra o conteúdo da aba selecionada
-    document.getElementById(tabId).style.display = 'block';
+    document.getElementById(tabId).classList.add('active');
 
     // Adiciona a classe 'active' ao botão clicado
     event.target.classList.add('active');
@@ -21,5 +21,5 @@ function flipCard(card) {
 }
 
 // Abre a primeira aba por padrão
-document.getElementById('prompt-engineering').style.display = 'block';
+document.getElementById('prompt-engineering').classList.add('active');
 document.querySelector('.tab-button').classList.add('active');

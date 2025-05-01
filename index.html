@@ -8,9 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Flashcards Salesforce Agentforce</h1>
-        
-        <!-- Legenda de Cores -->
+        <!-- Legenda (Direita Superior) -->
         <div class="legend">
             <h3>Legenda de Cores</h3>
             <div class="legend-item">
@@ -35,58 +33,234 @@
             </div>
         </div>
 
-        <!-- Abas dos Temas -->
-        <div class="tabs">
-            <button class="tab-button" onclick="openTab('prompt-engineering')">Prompt Engineering</button>
-            <button class="tab-button" onclick="openTab('agentforce-concepts')">Agentforce Concepts</button>
-            <button class="tab-button" onclick="openTab('data-cloud')">Agentforce and Data Cloud</button>
-            <button class="tab-button" onclick="openTab('service-cloud')">Agentforce and Service Cloud</button>
-            <button class="tab-button" onclick="openTab('sales-cloud')">Agentforce and Sales Cloud</button>
+        <!-- Lista de Temas (Esquerda) -->
+        <div class="sidebar">
+            <ul class="tabs">
+                <li><button class="tab-button" style="background-color: #FFD700;" onclick="openTab('prompt-engineering')">Prompt Engineering</button></li>
+                <li><button class="tab-button" style="background-color: #1E90FF;" onclick="openTab('agentforce-concepts')">Agentforce Concepts</button></li>
+                <li><button class="tab-button" style="background-color: #32CD32;" onclick="openTab('data-cloud')">Agentforce and Data Cloud</button></li>
+                <li><button class="tab-button" style="background-color: #800080;" onclick="openTab('service-cloud')">Agentforce and Service Cloud</button></li>
+                <li><button class="tab-button" style="background-color: #FFA500;" onclick="openTab('sales-cloud')">Agentforce and Sales Cloud</button></li>
+            </ul>
         </div>
 
-        <!-- Decks de Flashcards -->
-        <div id="prompt-engineering" class="tab-content" style="display: none;">
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">O que é o Prompt Builder?</div>
-                <div class="back">Ferramenta do Salesforce que cria prompts reutilizáveis para LLMs, integrando IA aos fluxos de trabalho. Configurado no Setup (Einstein Generative AI).</div>
+        <!-- Flashcards (Grid Central) -->
+        <div class="content">
+            <h1>Flashcards Salesforce Agentforce</h1>
+            <div id="prompt-engineering" class="tab-content">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Prompt Builder?</div>
+                    <div class="back">Ferramenta do Salesforce que cria prompts reutilizáveis para LLMs, integrando IA aos fluxos de trabalho. Configurado no Setup (Einstein Generative AI).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que faz o modelo Geração de Campo?</div>
+                    <div class="back">Gera conteúdo para campos específicos em registros (ex.: resumo em um campo). Configurado no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o modelo Resumo de Registro?</div>
+                    <div class="back">Sumariza informações de um registro inteiro. Usado no Prompt Builder para visões gerais.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Qual a função do modelo Flex?</div>
+                    <div class="back">Integra dados de múltiplos objetos (padrão e personalizados) para prompts complexos. Configurado no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o modelo E-mail de Vendas?</div>
+                    <div class="back">Cria e-mails personalizados com dados do Salesforce. Configurado no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que são Campos de Mesclagem?</div>
+                    <div class="back">Variáveis que integram dados de registros ou serviços externos em prompts. Configuradas no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Ancoragem Dinâmica?</div>
+                    <div class="back">Incorpora dados de registros automaticamente em prompts. Configurada no Prompt Builder ou Draft with Einstein.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Quais hiperparâmetros podem ser ajustados no Model Playground?</div>
+                    <div class="back">Temperatura (criatividade), Penalidade de Frequência (repetição de palavras), Penalidade de Presença (repetição de ideias). Configurados no Model Playground.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que causa erros de limite de tokens?</div>
+                    <div class="back">Variabilidade de tokens em prompts dinâmicos por registro. Gerenciado otimizando prompts no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é um Fluxo de Tela no Prompt Engineering?</div>
+                    <div class="back">Fluxo com UX personalizada que coleta dados para prompts. Configurado no Flow Builder com ação "Prompt Template".</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é um Fluxo disparado pelo Data Cloud?</div>
+                    <div class="back">Fluxo que integra dados unificados do Data Cloud em prompts. Configurado no Flow Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como integrar dados de um serviço REST API em prompts?</div>
+                    <div class="back">Usar campos de mesclagem de Registro de Serviço Externo. Configurado no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é necessário para acessar recursos de IA generativa?</div>
+                    <div class="back">Conjunto de permissões de Usuário de IA Generativa. Configurado em Permission Sets no Setup.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que acontece se não houver lista relacionada em um prompt?</div>
+                    <div class="back">O prompt não gera resposta, pois depende dos dados. Configurado no Prompt Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Qual técnica melhora a contextualização de prompts?</div>
+                    <div class="back">Usar role-play no prompt para dar contexto ao LLM. Configurado no Prompt Builder.</div>
+                </div>
             </div>
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">O que faz o modelo Geração de Campo?</div>
-                <div class="back">Gera conteúdo para campos específicos em registros (ex.: resumo em um campo). Configurado no Prompt Builder.</div>
-            </div>
-            <!-- Adicione mais flashcards para Prompt Engineering -->
-        </div>
 
-        <div id="agentforce-concepts" class="tab-content" style="display: none;">
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">O que é o Einstein Copilot?</div>
-                <div class="back">Assistente conversacional de IA que executa ações e responde perguntas no Salesforce. Configurado no Copilot Builder.</div>
+            <div id="agentforce-concepts" class="tab-content">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Einstein Copilot?</div>
+                    <div class="back">Assistente conversacional de IA que executa ações e responde perguntas no Salesforce. Configurado no Copilot Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é a Camada de Confiança Einstein?</div>
+                    <div class="back">Camada de segurança que protege dados e audita IA. Configurada no Setup (Einstein Generative AI).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Mascaramento de Dados?</div>
+                    <div class="back">Oculta dados sensíveis em prompts e respostas. Configurado na Camada de Confiança Einstein.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que são Regras de Moderação de Conteúdo?</div>
+                    <div class="back">Filtram respostas do Copilot para seguir políticas da empresa. Configuradas na Camada de Confiança.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Ancoragem Dinâmica com Recuperação Segura?</div>
+                    <div class="back">Integra dados de registros em prompts do Copilot com segurança. Configurada na Camada de Confiança.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que são Ações do Copilot?</div>
+                    <div class="back">Tarefas como consultar ou atualizar registros, configuradas na Página de Ações do Copilot.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Einstein Copilot Analytics?</div>
+                    <div class="back">Ferramenta que monitora usabilidade e ações do Copilot. Configurada no Setup (Copilot Analytics).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Model Builder?</div>
+                    <div class="back">Integra LLMs externos (ex.: AWS) ao Salesforce. Configurado no Einstein Studio Model Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como configurar permissões para ações do Copilot?</div>
+                    <div class="back">Atribuir permissões específicas em Permission Sets no Setup (ex.: Exclusão de Registro).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que faz "Enriquecer logs de eventos com dados de conversa"?</div>
+                    <div class="back">Mostra entradas e respostas do Copilot dos últimos 7 dias. Configurado no Setup (Einstein Copilot).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como depurar uma ação personalizada do Copilot?</div>
+                    <div class="back">Ativar depuração dinâmica no Painel Dinâmico do Copilot Builder para ver entradas e saídas.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que ativa a Camada de Confiança Einstein?</div>
+                    <div class="back">Ativar Einstein Generative AI no Setup.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como o Copilot processa solicitações de usuários?</div>
+                    <div class="back">Analisa a solicitação e usa LLM para gerar respostas contextuais. Configurado no Copilot Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Qual o papel do LLM em ações do Copilot?</div>
+                    <div class="back">Identifica as melhores ações e sua ordem de execução. Configurado no Copilot Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como monitorar a usabilidade do Copilot?</div>
+                    <div class="back">Usar Einstein Copilot Analytics para relatórios de ações e interações. Configurado no Setup.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como configurar uma tarefa personalizada no Copilot?</div>
+                    <div class="back">Criar um fluxo personalizado e vinculá-lo a uma ação do Copilot no Copilot Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que garante respostas consistentes com políticas da empresa?</div>
+                    <div class="back">Regras de Moderação de Conteúdo na Camada de Confiança Einstein.</div>
+                </div>
             </div>
-            <!-- Adicione mais flashcards para Agentforce Concepts -->
-        </div>
 
-        <div id="data-cloud" class="tab-content" style="display: none;">
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">O que é o Data Cloud?</div>
-                <div class="back">Unifica dados de várias fontes para insights acionáveis. Configurado no Salesforce Data Cloud.</div>
+            <div id="data-cloud" class="tab-content">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Data Cloud?</div>
+                    <div class="back">Unifica dados de várias fontes para insights acionáveis. Configurado no Salesforce Data Cloud.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que são Data Cloud Triggered Flows?</div>
+                    <div class="back">Fluxos que usam dados unificados do Data Cloud em prompts. Configurados no Flow Builder.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Trilho de Auditoria no Data Cloud?</div>
+                    <div class="back">Armazena prompts e dados mascarados para auditoria. Configurado na Camada de Confiança com Data Cloud.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Qual API integra sistemas legados com IA generativa?</div>
+                    <div class="back">REST API, configurada no Setup (API Integrations).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é necessário para armazenar dados de auditoria de IA?</div>
+                    <div class="back">Provisionar o Data Cloud no Setup.</div>
+                </div>
             </div>
-            <!-- Adicione mais flashcards para Data Cloud -->
-        </div>
 
-        <div id="service-cloud" class="tab-content" style="display: none;">
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">O que é o Einstein for Service?</div>
-                <div class="back">Conjunto de recursos de IA no Service Cloud para melhorar o atendimento. Configurado no Setup (Einstein for Service).</div>
+            <div id="service-cloud" class="tab-content">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Einstein for Service?</div>
+                    <div class="back">Conjunto de recursos de IA no Service Cloud para melhorar o atendimento. Configurado no Setup (Einstein for Service).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Service AI Grounding?</div>
+                    <div class="back">Ancora respostas de IA em casos, Conhecimento e notas de caso. Configurado no Einstein for Service.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que faz o Einstein Reply Recommendations?</div>
+                    <div class="back">Sugere respostas baseadas em artigos de Conhecimento para chats. Configurado no Einstein for Service.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Einstein Generative Service Replies for Email?</div>
+                    <div class="back">Gera e-mails personalizados baseados em Conhecimento. Configurado no Einstein for Service.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Case Classification?</div>
+                    <div class="back">Sugere valores para campos de caso com base em interações. Configurado no Einstein for Service.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Quais objetos são usados no Service AI Grounding?</div>
+                    <div class="back">Caso, Conhecimento e Notas de Caso. Configurado no Einstein for Service.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como reduzir o tempo de atendimento com IA?</div>
+                    <div class="back">Usar Reply Recommendations e Case Classification no Einstein for Service.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">Como o Copilot ajuda agentes de serviço?</div>
+                    <div class="back">Responde perguntas com base em artigos de Conhecimento. Configurado no Copilot Builder.</div>
+                </div>
             </div>
-            <!-- Adicione mais flashcards para Service Cloud -->
-        </div>
 
-        <div id="sales-cloud" class="tab-content" style="display: none;">
-            <div class="flashcard" onclick="flipCard(this)">
-                <div class="front">O que é o Einstein for Sales?</div>
-                <div class="back">Conjunto de recursos de IA no Sales Cloud para otimizar vendas. Configurado no Setup (Einstein for Sales).</div>
+            <div id="sales-cloud" class="tab-content">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é o Einstein for Sales?</div>
+                    <div class="back">Conjunto de recursos de IA no Sales Cloud para otimizar vendas. Configurado no Setup (Einstein for Sales).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Einstein Opportunity Scoring?</div>
+                    <div class="back">Classifica oportunidades e sugere ações. Configurado no Einstein for Sales.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que faz o Einstein Sales Insights?</div>
+                    <div class="back">Analisa chamadas para menções de concorrentes e coaching. Configurado no Einstein for Sales.</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Draft with Einstein?</div>
+                    <div class="back">Cria e-mails personalizados com ancoragem automática. Configurado no Email Composer (Sales Cloud).</div>
+                </div>
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="front">O que é Einstein Conversation Insights?</div>
+                    <div class="back">Personaliza insights de chamadas (ex.: 50 concorrentes). Configurado no Einstein for Sales.</div>
+                </div>
             </div>
-            <!-- Adicione mais flashcards para Sales Cloud -->
         </div>
     </div>
 
