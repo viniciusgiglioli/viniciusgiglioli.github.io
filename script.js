@@ -29,21 +29,15 @@ function switchLanguage(lang) {
     flashcards.forEach(card => {
         const front = card.querySelector('.front');
         const back = card.querySelector('.back');
+        const icons = card.querySelector('.icons');
         if (lang === 'en') {
-            front.textContent = card.getAttribute('data-front-en') || front.textContent;
+            front.innerHTML = card.getAttribute('data-front-en') || front.textContent;
             back.textContent = card.getAttribute('data-back-en') || back.textContent;
-            // Adiciona ícones para o inglês
-            const icon1 = card.getAttribute('data-icon1');
-            const icon2 = card.getAttribute('data-icon2');
-            front.innerHTML = `<i class="${icon1}" style="color: inherit;"></i><i class="${icon2}" style="color: inherit;"></i> ${front.textContent}`;
+            icons.innerHTML = `<i class="${card.getAttribute('data-icon1')}" style="color: inherit;"></i><i class="${card.getAttribute('data-icon2')}" style="color: inherit;"></i>`;
         } else {
-            // Reverte para o conteúdo original (português)
-            front.textContent = front.getAttribute('data-original-front') || front.textContent;
+            front.innerHTML = front.getAttribute('data-original-front') || front.textContent;
             back.textContent = back.getAttribute('data-original-back') || back.textContent;
-            // Adiciona ícones para o português
-            const icon1 = card.getAttribute('data-icon1');
-            const icon2 = card.getAttribute('data-icon2');
-            front.innerHTML = `<i class="${icon1}" style="color: inherit;"></i><i class="${icon2}" style="color: inherit;"></i> ${front.textContent}`;
+            icons.innerHTML = `<i class="${card.getAttribute('data-icon1')}" style="color: inherit;"></i><i class="${card.getAttribute('data-icon2')}" style="color: inherit;"></i>`;
         }
     });
     // Armazena o conteúdo original no próximo clique, se ainda não armazenado
@@ -51,7 +45,7 @@ function switchLanguage(lang) {
         const front = card.querySelector('.front');
         const back = card.querySelector('.back');
         if (!front.getAttribute('data-original-front')) {
-            front.setAttribute('data-original-front', front.textContent.replace(/<i[^>]*>.*?<\/i>/g, ''));
+            front.setAttribute('data-original-front', front.textContent.replace(/<div[^>]*>.*?<\/div>/g, ''));
         }
         if (!back.getAttribute('data-original-back')) {
             back.setAttribute('data-original-back', back.textContent);
