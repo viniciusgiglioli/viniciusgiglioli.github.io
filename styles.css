@@ -17,8 +17,8 @@ body {
 }
 
 .language-switch {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -41,15 +41,15 @@ body {
 
 .menu-toggle {
     display: none;
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
     background: none;
     border: none;
     color: #fff;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .sidebar {
@@ -61,6 +61,7 @@ body {
     position: sticky;
     top: 0;
     transition: transform 0.3s;
+    z-index: 1000;
 }
 
 .sidebar.hidden {
@@ -101,7 +102,7 @@ body {
     padding: 20px;
     text-align: center;
     background-color: #2a2a2a;
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 h1 {
@@ -142,6 +143,7 @@ h1 {
     display: inline-block;
     margin: 10px;
     position: relative;
+    z-index: 1;
 }
 
 .flashcard .front, .flashcard .back {
@@ -204,12 +206,14 @@ h1 {
         top: 0;
         left: -100%;
         z-index: 1000;
+        height: 100vh;
+        padding-top: 60px;
     }
     .sidebar.active {
         left: 0;
     }
     .content {
-        margin-top: 80px;
+        margin-top: 60px;
         padding: 10px;
     }
     .tab-content.active {
@@ -217,6 +221,7 @@ h1 {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        padding-top: 0;
     }
     .flashcard {
         width: 90%;
@@ -233,6 +238,7 @@ h1 {
     }
     h1 {
         font-size: 24px;
+        margin-top: 0;
     }
     .subtitle {
         font-size: 16px;
