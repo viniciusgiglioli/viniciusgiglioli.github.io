@@ -24,11 +24,21 @@ function switchLanguage(lang) {
     const hiperfocoButton = document.getElementById('hiperfoco-button');
     const flashcards = document.querySelectorAll('.flashcard');
     if (lang === 'en') {
-        hiperfocoButton.textContent = 'Hyperfocus';
-        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
+        if (audio.paused) {
+            hiperfocoButton.textContent = 'Hyperfocus';
+            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
+        } else {
+            hiperfocoButton.textContent = 'Pause';
+            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pause';
+        }
     } else {
-        hiperfocoButton.textContent = 'Hiperfoco';
-        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
+        if (audio.paused) {
+            hiperfocoButton.textContent = 'Hiperfoco';
+            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
+        } else {
+            hiperfocoButton.textContent = 'Pausar';
+            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pausar';
+        }
     }
     flashcards.forEach(card => {
         const front = card.querySelector('.front');
@@ -66,13 +76,16 @@ const volumeSlider = document.getElementById('volume-slider');
 
 function toggleHiperfoco() {
     if (audio.paused) {
+        audio.volume = 0.15; // Define o volume para 15%
         audio.play();
-        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pausar';
+        hiperfocoButton.classList.add('pressed');
         volumeSlider.classList.add('visible');
+        switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
     } else {
         audio.pause();
-        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
+        hiperfocoButton.classList.remove('pressed');
         volumeSlider.classList.remove('visible');
+        switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
     }
 }
 
