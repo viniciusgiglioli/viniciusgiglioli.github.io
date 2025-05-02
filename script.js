@@ -31,13 +31,11 @@ function switchLanguage(lang) {
         const back = card.querySelector('.back');
         const icons = card.querySelector('.icons');
         if (lang === 'en') {
-            front.innerHTML = card.getAttribute('data-front-en') || front.textContent;
+            front.innerHTML = card.getAttribute('data-front-en') + '<div class="icons"><i class="' + card.getAttribute('data-icon1') + '" style="color: inherit;"></i><i class="' + card.getAttribute('data-icon2') + '" style="color: inherit;"></i></div>';
             back.textContent = card.getAttribute('data-back-en') || back.textContent;
-            icons.innerHTML = `<i class="${card.getAttribute('data-icon1')}" style="color: inherit;"></i><i class="${card.getAttribute('data-icon2')}" style="color: inherit;"></i>`;
         } else {
-            front.innerHTML = front.getAttribute('data-original-front') || front.textContent;
+            front.innerHTML = front.getAttribute('data-original-front') + '<div class="icons"><i class="' + card.getAttribute('data-icon1') + '" style="color: inherit;"></i><i class="' + card.getAttribute('data-icon2') + '" style="color: inherit;"></i></div>';
             back.textContent = back.getAttribute('data-original-back') || back.textContent;
-            icons.innerHTML = `<i class="${card.getAttribute('data-icon1')}" style="color: inherit;"></i><i class="${card.getAttribute('data-icon2')}" style="color: inherit;"></i>`;
         }
     });
     // Armazena o conteúdo original no próximo clique, se ainda não armazenado
