@@ -33,6 +33,7 @@ body {
 .language-switch {
     display: flex;
     gap: 10px;
+    order: 2;
 }
 
 .lang-button {
@@ -51,6 +52,7 @@ body {
 .title-container {
     flex-grow: 1;
     text-align: center;
+    order: 1;
 }
 
 h1 {
@@ -63,35 +65,6 @@ h1 {
     color: #ccc;
     margin: 0;
     font-size: 16px;
-}
-
-.music-player {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-#hiperfoco-button {
-    background-color: #00CED1;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    transition: all 0.3s ease;
-}
-
-#hiperfoco-button.pressed {
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
-    opacity: 0.9;
-}
-
-#hiperfoco-button:hover {
-    opacity: 0.8;
 }
 
 .menu-toggle {
@@ -183,7 +156,8 @@ h1 {
     padding: 20px;
     text-align: center;
     background-color: #1a1a1a;
-    margin-top: 80px; /* Ajustado para o tamanho do top-controls */
+    margin-top: 70px; /* Ajustado para evitar sobreposição */
+    z-index: 1;
 }
 
 .tab-content {
@@ -323,10 +297,6 @@ h1 {
         font-size: 12px;
         padding: 8px;
     }
-    #hiperfoco-button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
     .embed-container {
         width: 120px;
         height: 120px;
@@ -344,6 +314,6 @@ h1 {
     }
     .content {
         margin-left: 0;
-        margin-top: 80px;
+        margin-top: 70px;
     }
 }

@@ -21,25 +21,7 @@ function flipCard(card) {
 }
 
 function switchLanguage(lang) {
-    const hiperfocoButton = document.getElementById('hiperfoco-button');
     const flashcards = document.querySelectorAll('.flashcard');
-    if (lang === 'en') {
-        if (hiperfocoButton.textContent.includes('Pausar') || hiperfocoButton.textContent.includes('Pause')) {
-            hiperfocoButton.textContent = 'Pause';
-            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pause';
-        } else {
-            hiperfocoButton.textContent = 'Hyperfocus';
-            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
-        }
-    } else {
-        if (hiperfocoButton.textContent.includes('Pausar') || hiperfocoButton.textContent.includes('Pause')) {
-            hiperfocoButton.textContent = 'Pausar';
-            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pausar';
-        } else {
-            hiperfocoButton.textContent = 'Hiperfoco';
-            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
-        }
-    }
     flashcards.forEach(card => {
         const front = card.querySelector('.front');
         const back = card.querySelector('.back');
@@ -70,27 +52,6 @@ function toggleMenu() {
     sidebar.classList.toggle('hidden');
 }
 
-const hiperfocoButton = document.getElementById('hiperfoco-button');
-const lofiVideo = document.getElementById('lofi-video');
-let isPlaying = false;
-
-function toggleHiperfoco() {
-    if (!isPlaying) {
-        // Ativa o vídeo
-        lofiVideo.src = lofiVideo.src.replace('mute=1', 'mute=0').replace('autoplay=0', 'autoplay=1');
-        lofiVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        hiperfocoButton.classList.add('pressed');
-        isPlaying = true;
-        switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
-    } else {
-        // Pausa o vídeo
-        lofiVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        hiperfocoButton.classList.remove('pressed');
-        isPlaying = false;
-        switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
-    }
-}
-
 // Inicializa o site com o sidebar escondido
 window.onload = function() {
     const sidebar = document.querySelector('.sidebar');
@@ -98,7 +59,4 @@ window.onload = function() {
     document.getElementById('prompt-engineering').classList.add('active');
     document.querySelector('.tab-button').classList.add('active');
     document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
-
-    // Define o comportamento inicial
-    hiperfocoButton.onclick = toggleHiperfoco;
 };
