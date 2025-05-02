@@ -24,7 +24,7 @@ function switchLanguage(lang) {
     const hiperfocoButton = document.getElementById('hiperfoco-button');
     const flashcards = document.querySelectorAll('.flashcard');
     if (lang === 'en') {
-        if (hiperfocoButton.textContent.includes('Pause')) {
+        if (hiperfocoButton.textContent.includes('Pausar') || hiperfocoButton.textContent.includes('Pause')) {
             hiperfocoButton.textContent = 'Pause';
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pause';
         } else {
@@ -32,7 +32,7 @@ function switchLanguage(lang) {
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
         }
     } else {
-        if (hiperfocoButton.textContent.includes('Pausar')) {
+        if (hiperfocoButton.textContent.includes('Pausar') || hiperfocoButton.textContent.includes('Pause')) {
             hiperfocoButton.textContent = 'Pausar';
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pausar';
         } else {
@@ -72,18 +72,21 @@ function toggleMenu() {
 
 const hiperfocoButton = document.getElementById('hiperfoco-button');
 const lofiVideo = document.getElementById('lofi-video');
+let isPlaying = false;
 
 function toggleHiperfoco() {
-    if (hiperfocoButton.textContent.includes('Hiperfoco') || hiperfocoButton.textContent.includes('Hyperfocus')) {
+    if (!isPlaying) {
         // Ativa o vídeo
         lofiVideo.src = lofiVideo.src.replace('mute=1', 'mute=0').replace('autoplay=0', 'autoplay=1');
         lofiVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
         hiperfocoButton.classList.add('pressed');
+        isPlaying = true;
         switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
     } else {
         // Pausa o vídeo
         lofiVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         hiperfocoButton.classList.remove('pressed');
+        isPlaying = false;
         switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
     }
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Botões de Língua e Música (Topo) -->
+        <!-- Botões de Língua, Título e Música (Topo) -->
         <div class="top-controls">
             <div class="language-switch">
                 <button class="lang-button" onclick="switchLanguage('pt')">
@@ -18,6 +18,10 @@
                 <button class="lang-button" onclick="switchLanguage('en')">
                     <img src="https://flagcdn.com/16x12/us.png" alt="English">
                 </button>
+            </div>
+            <div class="title-container">
+                <h1>Flashcards Salesforce Agentforce</h1>
+                <h2 id="subtitle" class="subtitle">Agentforce Concepts</h2>
             </div>
             <div class="music-player">
                 <button id="hiperfoco-button">
@@ -41,14 +45,12 @@
                 <li><button class="tab-button" style="background-color: #FFA500;" onclick="openTab('sales-cloud')">Agentforce and Sales Cloud</button></li>
             </ul>
             <div class="embed-container">
-                <iframe id="lofi-video" src="https://www.youtube.com/embed/jfKfPfyJRdk?mute=1&autoplay=0&controls=1" frameborder="0" allowfullscreen></iframe>
+                <iframe id="lofi-video" src="https://www.youtube.com/embed/jfKfPfyJRdk?mute=1&autoplay=0&controls=0" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
 
         <!-- Flashcards (Grid Central) -->
         <div class="content">
-            <h1>Flashcards Salesforce Agentforce</h1>
-            <h2 id="subtitle" class="subtitle"></h2>
             <div id="prompt-engineering" class="tab-content">
                 <div class="flashcard" onclick="flipCard(this)" data-front-en="What is the Prompt Builder?" data-back-en="A Salesforce tool that creates reusable prompts for LLMs, integrating AI into workflows. Configured in Setup (Einstein Generative AI)." data-icon1="fas fa-tools" data-icon2="fas fa-pen">
                     <div class="front">O que é o Prompt Builder?<div class="icons"><i class="fas fa-tools" style="color: #00CED1;"></i><i class="fas fa-pen" style="color: #00CED1;"></i></div></div>

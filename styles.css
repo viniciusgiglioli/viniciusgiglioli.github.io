@@ -18,15 +18,16 @@ body {
 
 .top-controls {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
     z-index: 1100;
-    background-color: rgba(26, 26, 26, 0.9);
-    padding: 5px 10px;
-    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .language-switch {
@@ -45,6 +46,23 @@ body {
     width: 24px;
     height: 18px;
     border-radius: 3px;
+}
+
+.title-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
+}
+
+.subtitle {
+    color: #ccc;
+    margin: 0;
+    font-size: 16px;
 }
 
 .music-player {
@@ -85,7 +103,7 @@ body {
     color: #fff;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1100;
+    z-index: 1200;
     padding: 5px;
 }
 
@@ -144,10 +162,12 @@ body {
 
 .embed-container {
     flex: 0 0 auto;
-    height: 100px; /* Reduzido para caber abaixo dos botões */
+    width: 150px;
+    height: 150px;
     position: relative;
     overflow: hidden;
     margin-top: 10px;
+    align-self: center;
 }
 
 .embed-container iframe {
@@ -162,19 +182,8 @@ body {
     flex: 1;
     padding: 20px;
     text-align: center;
-    background-color: #2a2a2a;
-    margin-top: 60px;
-}
-
-h1 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: #ccc;
-    font-size: 18px;
-    margin-bottom: 20px;
+    background-color: #1a1a1a;
+    margin-top: 80px; /* Ajustado para o tamanho do top-controls */
 }
 
 .tab-content {
@@ -266,15 +275,25 @@ h1 {
     .sidebar {
         width: 60%;
         max-width: 200px;
-        padding-top: 60px;
+        padding-top: 80px;
     }
     .content {
-        margin-top: 60px;
+        margin-top: 80px;
         padding: 10px;
     }
     .top-controls {
-        top: 10px;
-        right: 10px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .title-container {
+        width: 100%;
+        margin: 5px 0;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    .subtitle {
+        font-size: 14px;
     }
     .lang-button img {
         width: 28px;
@@ -300,13 +319,6 @@ h1 {
     .flashcard .icons i {
         font-size: 14px;
     }
-    h1 {
-        font-size: 24px;
-        margin-top: 0;
-    }
-    .subtitle {
-        font-size: 16px;
-    }
     .tab-button {
         font-size: 12px;
         padding: 8px;
@@ -314,6 +326,10 @@ h1 {
     #hiperfoco-button {
         font-size: 12px;
         padding: 6px 10px;
+    }
+    .embed-container {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -324,10 +340,10 @@ h1 {
     }
     .sidebar {
         width: 200px;
-        padding-top: 60px;
+        padding-top: 80px;
     }
     .content {
         margin-left: 0;
-        margin-top: 60px;
+        margin-top: 80px;
     }
 }
