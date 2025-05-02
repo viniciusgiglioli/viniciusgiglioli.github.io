@@ -24,20 +24,20 @@ function switchLanguage(lang) {
     const hiperfocoButton = document.getElementById('hiperfoco-button');
     const flashcards = document.querySelectorAll('.flashcard');
     if (lang === 'en') {
-        if (videoPaused()) {
-            hiperfocoButton.textContent = 'Hyperfocus';
-            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
-        } else {
+        if (hiperfocoButton.textContent.includes('Pause')) {
             hiperfocoButton.textContent = 'Pause';
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pause';
+        } else {
+            hiperfocoButton.textContent = 'Hyperfocus';
+            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
         }
     } else {
-        if (videoPaused()) {
-            hiperfocoButton.textContent = 'Hiperfoco';
-            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
-        } else {
+        if (hiperfocoButton.textContent.includes('Pausar')) {
             hiperfocoButton.textContent = 'Pausar';
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pausar';
+        } else {
+            hiperfocoButton.textContent = 'Hiperfoco';
+            hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
         }
     }
     flashcards.forEach(card => {
@@ -73,12 +73,8 @@ function toggleMenu() {
 const hiperfocoButton = document.getElementById('hiperfoco-button');
 const lofiVideo = document.getElementById('lofi-video');
 
-function videoPaused() {
-    return lofiVideo.src.includes('mute=1') || lofiVideo.src.includes('autoplay=0');
-}
-
 function toggleHiperfoco() {
-    if (videoPaused()) {
+    if (hiperfocoButton.textContent.includes('Hiperfoco') || hiperfocoButton.textContent.includes('Hyperfocus')) {
         // Ativa o vídeo
         lofiVideo.src = lofiVideo.src.replace('mute=1', 'mute=0').replace('autoplay=0', 'autoplay=1');
         lofiVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');

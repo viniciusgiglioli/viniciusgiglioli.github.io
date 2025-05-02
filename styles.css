@@ -23,7 +23,10 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    z-index: 1000;
+    z-index: 1100;
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .language-switch {
@@ -47,20 +50,20 @@ body {
 .music-player {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 #hiperfoco-button {
     background-color: #00CED1;
     color: #fff;
     border: none;
-    padding: 8px 12px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
     transition: all 0.3s ease;
 }
 
@@ -83,13 +86,12 @@ body {
     font-size: 24px;
     cursor: pointer;
     z-index: 1100;
+    padding: 5px;
 }
 
 .sidebar {
     width: 200px;
-    padding: 20px;
     background-color: #2a2a2a;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -98,6 +100,8 @@ body {
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    padding: 60px 10px 10px 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar.active {
@@ -108,36 +112,21 @@ body {
     left: -100%;
 }
 
-.embed-container {
-    flex: 1;
-    min-height: 200px;
-    position: relative;
-    overflow: hidden;
-}
-
-.embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .tabs {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .tab-button {
     display: block;
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
     text-align: left;
     transition: opacity 0.3s;
@@ -153,12 +142,28 @@ body {
     font-weight: bold;
 }
 
+.embed-container {
+    flex: 0 0 auto;
+    height: 100px; /* Reduzido para caber abaixo dos botões */
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .content {
     flex: 1;
     padding: 20px;
     text-align: center;
     background-color: #2a2a2a;
-    margin-top: 0;
+    margin-top: 60px;
 }
 
 h1 {
