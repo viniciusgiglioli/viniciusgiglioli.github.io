@@ -68,19 +68,12 @@ body {
     opacity: 0.8;
 }
 
-#play-pause-button {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
+.volume-control {
+    display: none;
 }
 
-#play-pause-button:hover {
-    background-color: #ddd;
+.volume-control.visible {
+    display: block;
 }
 
 #volume-slider {
@@ -313,10 +306,6 @@ h1 {
     #hiperfoco-button {
         font-size: 12px;
         padding: 6px 10px;
-    }
-    #play-pause-button {
-        padding: 6px;
-        font-size: 12px;
     }
     #volume-slider {
         width: 60px;

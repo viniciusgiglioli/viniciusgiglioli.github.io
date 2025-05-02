@@ -20,13 +20,10 @@
                 </button>
             </div>
             <div class="music-player">
-                <button id="hiperfoco-button" onclick="toggleMusic()">
+                <button id="hiperfoco-button">
                     <i class="fas fa-headphones"></i> Hiperfoco
                 </button>
-                <button id="play-pause-button" onclick="togglePlayPause()">
-                    <i class="fas fa-play"></i>
-                </button>
-                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5" oninput="adjustVolume()">
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0" oninput="adjustVolume()" class="volume-control hidden">
             </div>
         </div>
 

@@ -21,7 +21,15 @@ function flipCard(card) {
 }
 
 function switchLanguage(lang) {
+    const hiperfocoButton = document.getElementById('hiperfoco-button');
     const flashcards = document.querySelectorAll('.flashcard');
+    if (lang === 'en') {
+        hiperfocoButton.textContent = 'Hyperfocus';
+        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
+    } else {
+        hiperfocoButton.textContent = 'Hiperfoco';
+        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
+    }
     flashcards.forEach(card => {
         const front = card.querySelector('.front');
         const back = card.querySelector('.back');
@@ -53,27 +61,22 @@ function toggleMenu() {
 }
 
 const audio = document.getElementById('lofi-audio');
-const playPauseButton = document.getElementById('play-pause-button');
+const hiperfocoButton = document.getElementById('hiperfoco-button');
+const volumeSlider = document.getElementById('volume-slider');
 
-function toggleMusic() {
+function toggleHiperfoco() {
     if (audio.paused) {
         audio.play();
-        playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
-    }
-}
-
-function togglePlayPause() {
-    if (audio.paused) {
-        audio.play();
-        playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pausar';
+        volumeSlider.classList.add('visible');
     } else {
         audio.pause();
-        playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+        hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
+        volumeSlider.classList.remove('visible');
     }
 }
 
 function adjustVolume() {
-    const volumeSlider = document.getElementById('volume-slider');
     audio.volume = volumeSlider.value;
 }
 
@@ -87,6 +90,7 @@ window.onload = function() {
     document.querySelector('.tab-button').classList.add('active');
     document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
 
-    // Define o volume inicial
-    audio.volume = 0.5;
+    // Define o volume inicial como 0
+    audio.volume = 0;
+    hiperfocoButton.onclick = toggleHiperfoco;
 };
