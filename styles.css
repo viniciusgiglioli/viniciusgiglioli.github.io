@@ -199,9 +199,12 @@ h1 {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        font-size: 28px;
+        padding: 10px 15px;
     }
     .sidebar {
-        width: 100%;
+        width: 60%;
+        max-width: 200px;
         position: fixed;
         top: 0;
         left: -100%;
@@ -212,9 +215,22 @@ h1 {
     .sidebar.active {
         left: 0;
     }
+    .sidebar.hidden {
+        left: -100%;
+    }
     .content {
         margin-top: 60px;
         padding: 10px;
+    }
+    .language-switch {
+        top: 10px;
+        left: auto;
+        right: 10px;
+        transform: none;
+    }
+    .lang-button img {
+        width: 28px;
+        height: 21px;
     }
     .tab-content.active {
         display: flex;
@@ -224,8 +240,8 @@ h1 {
         padding-top: 0;
     }
     .flashcard {
-        width: 90%;
-        max-width: 300px;
+        width: 85%;
+        max-width: 280px;
         height: 120px;
         margin: 5px 0;
     }

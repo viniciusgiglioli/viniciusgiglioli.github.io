@@ -40,7 +40,7 @@ function switchLanguage(lang) {
             back.textContent = card.getAttribute('data-back-en') || back.textContent;
         } else {
             front.innerHTML = card.getAttribute('data-original-front') + 
-                `<div class="icons"><i class="${icon1}" style="color: ${color};"></i><i class="${icon2}" style="color: #${color};"></i></div>`;
+                `<div class="icons"><i class="${icon1}" style="color: ${color};"></i><i class="${icon2}" style="color: ${color};"></i></div>`;
             back.textContent = card.getAttribute('data-original-back') || back.textContent;
         }
     });
@@ -52,6 +52,13 @@ function toggleMenu() {
     sidebar.classList.toggle('hidden');
 }
 
-document.getElementById('prompt-engineering').classList.add('active');
-document.querySelector('.tab-button').classList.add('active');
-document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
+// Inicializa o site com o sidebar escondido no mobile
+window.onload = function() {
+    if (window.innerWidth <= 768) {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.add('hidden');
+    }
+    document.getElementById('prompt-engineering').classList.add('active');
+    document.querySelector('.tab-button').classList.add('active');
+    document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
+};
