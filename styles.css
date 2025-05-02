@@ -82,11 +82,17 @@ body {
     padding: 20px;
     text-align: center;
     background-color: #2a2a2a;
-    margin-top: 60px; /* Espaço para os botões de idioma */
+    margin-top: 60px;
 }
 
 h1 {
     color: #fff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ccc;
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
@@ -101,7 +107,7 @@ h1 {
     justify-items: center;
 }
 
-#prompt-engineering .flashcard { background-color: #FFD700; }
+#prompt-engineering .flashcard { background-color: #00CED1; }
 #agentforce-concepts .flashcard { background-color: #1E90FF; }
 #data-cloud .flashcard { background-color: #32CD32; }
 #service-cloud .flashcard { background-color: #800080; }
@@ -116,6 +122,7 @@ h1 {
     border-radius: 10px;
     display: inline-block;
     margin: 10px;
+    position: relative;
 }
 
 .flashcard .front, .flashcard .back {
@@ -138,6 +145,7 @@ h1 {
     background-color: inherit;
     color: #fff;
     font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra na pergunta */
 }
 
 .flashcard .back {
@@ -152,4 +160,9 @@ h1 {
 
 .flashcard.flipped .back {
     transform: rotateY(0);
+}
+
+.flashcard i {
+    margin-right: 5px;
+    font-size: 16px;
 }

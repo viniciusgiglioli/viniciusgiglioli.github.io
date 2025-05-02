@@ -14,6 +14,10 @@ function openTab(tabId) {
 
     // Adiciona a classe 'active' ao botão clicado
     event.target.classList.add('active');
+
+    // Atualiza o subtítulo com o nome da aba
+    const subtitle = document.getElementById('subtitle');
+    subtitle.textContent = event.target.textContent;
 }
 
 function flipCard(card) {
@@ -28,10 +32,18 @@ function switchLanguage(lang) {
         if (lang === 'en') {
             front.textContent = card.getAttribute('data-front-en') || front.textContent;
             back.textContent = card.getAttribute('data-back-en') || back.textContent;
+            // Adiciona ícones para o inglês
+            const icon1 = card.getAttribute('data-icon1');
+            const icon2 = card.getAttribute('data-icon2');
+            front.innerHTML = `<i class="${icon1}" style="color: inherit;"></i><i class="${icon2}" style="color: inherit;"></i> ${front.textContent}`;
         } else {
-            // Reverte para o conteúdo original (português), que está no HTML
+            // Reverte para o conteúdo original (português)
             front.textContent = front.getAttribute('data-original-front') || front.textContent;
             back.textContent = back.getAttribute('data-original-back') || back.textContent;
+            // Adiciona ícones para o português
+            const icon1 = card.getAttribute('data-icon1');
+            const icon2 = card.getAttribute('data-icon2');
+            front.innerHTML = `<i class="${icon1}" style="color: inherit;"></i><i class="${icon2}" style="color: inherit;"></i> ${front.textContent}`;
         }
     });
     // Armazena o conteúdo original no próximo clique, se ainda não armazenado
@@ -39,7 +51,7 @@ function switchLanguage(lang) {
         const front = card.querySelector('.front');
         const back = card.querySelector('.back');
         if (!front.getAttribute('data-original-front')) {
-            front.setAttribute('data-original-front', front.textContent);
+            front.setAttribute('data-original-front', front.textContent.replace(/<i[^>]*>.*?<\/i>/g, ''));
         }
         if (!back.getAttribute('data-original-back')) {
             back.setAttribute('data-original-back', back.textContent);
@@ -47,6 +59,7 @@ function switchLanguage(lang) {
     });
 }
 
-// Abre a primeira aba por padrão
+// Abre a primeira aba por padrão e define o subtítulo
 document.getElementById('prompt-engineering').classList.add('active');
 document.querySelector('.tab-button').classList.add('active');
+document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
