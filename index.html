@@ -9,15 +9,32 @@
 </head>
 <body>
     <div class="container">
-        <!-- Botões de Língua (Topo) -->
-        <div class="language-switch">
-            <button class="lang-button" onclick="switchLanguage('pt')">
-                <img src="https://flagcdn.com/16x12/br.png" alt="Português">
-            </button>
-            <button class="lang-button" onclick="switchLanguage('en')">
-                <img src="https://flagcdn.com/16x12/us.png" alt="English">
-            </button>
+        <!-- Botões de Língua e Música (Topo) -->
+        <div class="top-controls">
+            <div class="language-switch">
+                <button class="lang-button" onclick="switchLanguage('pt')">
+                    <img src="https://flagcdn.com/16x12/br.png" alt="Português">
+                </button>
+                <button class="lang-button" onclick="switchLanguage('en')">
+                    <img src="https://flagcdn.com/16x12/us.png" alt="English">
+                </button>
+            </div>
+            <div class="music-player">
+                <button id="hiperfoco-button" onclick="toggleMusic()">
+                    <i class="fas fa-headphones"></i> Hiperfoco
+                </button>
+                <button id="play-pause-button" onclick="togglePlayPause()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5" oninput="adjustVolume()">
+            </div>
         </div>
+
+        <!-- Áudio da Playlist Lo-Fi -->
+        <audio id="lofi-audio" loop>
+            <source src="https://www.chillhop.com/wp-content/uploads/2020/07/3b98fc85a85b4d9b769c6b3c7d2794a2e121c84.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
 
         <!-- Botão de Menu Mobile -->
         <button class="menu-toggle" onclick="toggleMenu()">

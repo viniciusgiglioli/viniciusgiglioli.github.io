@@ -16,14 +16,19 @@ body {
     min-height: 100vh;
 }
 
-.language-switch {
+.top-controls {
     position: fixed;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.language-switch {
     display: flex;
     gap: 10px;
-    z-index: 1000;
 }
 
 .lang-button {
@@ -37,6 +42,50 @@ body {
     width: 24px;
     height: 18px;
     border-radius: 3px;
+}
+
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#hiperfoco-button {
+    background-color: #00CED1;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.3s;
+}
+
+#hiperfoco-button:hover {
+    opacity: 0.8;
+}
+
+#play-pause-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#play-pause-button:hover {
+    background-color: #ddd;
+}
+
+#volume-slider {
+    width: 80px;
+    cursor: pointer;
 }
 
 .menu-toggle {
@@ -222,11 +271,9 @@ h1 {
         margin-top: 60px;
         padding: 10px;
     }
-    .language-switch {
+    .top-controls {
         top: 10px;
-        left: auto;
         right: 10px;
-        transform: none;
     }
     .lang-button img {
         width: 28px;
@@ -262,5 +309,16 @@ h1 {
     .tab-button {
         font-size: 12px;
         padding: 8px;
+    }
+    #hiperfoco-button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    #play-pause-button {
+        padding: 6px;
+        font-size: 12px;
+    }
+    #volume-slider {
+        width: 60px;
     }
 }

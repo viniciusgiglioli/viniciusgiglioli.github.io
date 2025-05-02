@@ -52,6 +52,31 @@ function toggleMenu() {
     sidebar.classList.toggle('hidden');
 }
 
+const audio = document.getElementById('lofi-audio');
+const playPauseButton = document.getElementById('play-pause-button');
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+    }
+}
+
+function togglePlayPause() {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+        audio.pause();
+        playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+    }
+}
+
+function adjustVolume() {
+    const volumeSlider = document.getElementById('volume-slider');
+    audio.volume = volumeSlider.value;
+}
+
 // Inicializa o site com o sidebar escondido no mobile
 window.onload = function() {
     if (window.innerWidth <= 768) {
@@ -61,4 +86,7 @@ window.onload = function() {
     document.getElementById('prompt-engineering').classList.add('active');
     document.querySelector('.tab-button').classList.add('active');
     document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
+
+    // Define o volume inicial
+    audio.volume = 0.5;
 };
