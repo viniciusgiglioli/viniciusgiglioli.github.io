@@ -91,7 +91,7 @@ h1 {
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    padding: 90px 10px 10px 10px; /* Aumentado para descer os temas */
+    padding: 90px 10px 10px 10px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -156,7 +156,7 @@ h1 {
     padding: 20px;
     text-align: center;
     background-color: #1a1a1a;
-    margin-top: 70px; /* Ajustado para desktop */
+    margin-top: 70px;
     z-index: 1;
 }
 
@@ -249,19 +249,26 @@ h1 {
     .sidebar {
         width: 60%;
         max-width: 200px;
-        padding-top: 100px; /* Ajustado para descer os temas abaixo do top-controls */
+        padding-top: 120px; /* Aumentado para descer mais os botões dos temas */
     }
     .content {
-        margin-top: 100px; /* Aumentado para exibir os cards inteiros */
+        margin-top: 100px;
         padding: 10px;
     }
     .top-controls {
         flex-wrap: wrap;
         padding: 10px;
+        justify-content: space-between; /* Garante que as bandeiras fiquem à direita */
+        align-items: flex-start; /* Alinha os itens ao topo */
     }
     .title-container {
         width: 100%;
         margin: 5px 0;
+        order: 1;
+    }
+    .language-switch {
+        order: 2;
+        margin-left: auto; /* Garante que as bandeiras fiquem à direita */
     }
     h1 {
         font-size: 18px;
@@ -298,8 +305,8 @@ h1 {
         padding: 8px;
     }
     .embed-container {
-        width: 180px; /* Mesma largura dos botões dos temas */
-        height: 180px; /* Aumentado a altura */
+        width: 180px;
+        height: 180px;
     }
 }
 
