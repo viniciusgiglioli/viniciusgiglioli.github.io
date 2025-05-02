@@ -23,23 +23,19 @@
                 <button id="hiperfoco-button">
                     <i class="fas fa-headphones"></i> Hiperfoco
                 </button>
-                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0" oninput="adjustVolume()" class="volume-control hidden">
             </div>
         </div>
 
-        <!-- Áudio da Playlist Lo-Fi -->
-        <audio id="lofi-audio" loop>
-            <source src="https://www.chillhop.com/wp-content/uploads/2020/07/3b98fc85a85b4d9b769c6b3c7d2794a2e121c84.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-
-        <!-- Botão de Menu Mobile -->
+        <!-- Botão de Menu -->
         <button class="menu-toggle" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </button>
 
-        <!-- Lista de Temas (Esquerda/Sidebar) -->
+        <!-- Menu Lateral com Embed -->
         <div class="sidebar">
+            <div class="embed-container">
+                <iframe id="lofi-video" src="https://www.youtube.com/embed/jfKfPfyJRdk?mute=1&autoplay=0&controls=1" frameborder="0" allowfullscreen></iframe>
+            </div>
             <ul class="tabs">
                 <li><button class="tab-button" style="background-color: #00CED1;" onclick="openTab('prompt-engineering')">Prompt Engineering</button></li>
                 <li><button class="tab-button" style="background-color: #1E90FF;" onclick="openTab('agentforce-concepts')">Agentforce Concepts</button></li>

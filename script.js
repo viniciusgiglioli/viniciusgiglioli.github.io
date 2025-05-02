@@ -10,7 +10,7 @@ function openTab(tabId) {
     const subtitle = document.getElementById('subtitle');
     subtitle.textContent = event.target.textContent;
 
-    // Fecha o menu automaticamente no mobile após selecionar um tema
+    // Fecha o menu automaticamente após selecionar um tema
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.remove('active');
     sidebar.classList.add('hidden');
@@ -24,7 +24,7 @@ function switchLanguage(lang) {
     const hiperfocoButton = document.getElementById('hiperfoco-button');
     const flashcards = document.querySelectorAll('.flashcard');
     if (lang === 'en') {
-        if (audio.paused) {
+        if (videoPaused()) {
             hiperfocoButton.textContent = 'Hyperfocus';
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hyperfocus';
         } else {
@@ -32,7 +32,7 @@ function switchLanguage(lang) {
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Pause';
         }
     } else {
-        if (audio.paused) {
+        if (videoPaused()) {
             hiperfocoButton.textContent = 'Hiperfoco';
             hiperfocoButton.innerHTML = '<i class="fas fa-headphones"></i> Hiperfoco';
         } else {
@@ -70,40 +70,36 @@ function toggleMenu() {
     sidebar.classList.toggle('hidden');
 }
 
-const audio = document.getElementById('lofi-audio');
 const hiperfocoButton = document.getElementById('hiperfoco-button');
-const volumeSlider = document.getElementById('volume-slider');
+const lofiVideo = document.getElementById('lofi-video');
+
+function videoPaused() {
+    return lofiVideo.src.includes('mute=1') || lofiVideo.src.includes('autoplay=0');
+}
 
 function toggleHiperfoco() {
-    if (audio.paused) {
-        audio.volume = 0.15; // Define o volume para 15%
-        audio.play();
+    if (videoPaused()) {
+        // Ativa o vídeo
+        lofiVideo.src = lofiVideo.src.replace('mute=1', 'mute=0').replace('autoplay=0', 'autoplay=1');
+        lofiVideo.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
         hiperfocoButton.classList.add('pressed');
-        volumeSlider.classList.add('visible');
         switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
     } else {
-        audio.pause();
+        // Pausa o vídeo
+        lofiVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         hiperfocoButton.classList.remove('pressed');
-        volumeSlider.classList.remove('visible');
         switchLanguage(document.documentElement.lang === 'en' ? 'en' : 'pt');
     }
 }
 
-function adjustVolume() {
-    audio.volume = volumeSlider.value;
-}
-
-// Inicializa o site com o sidebar escondido no mobile
+// Inicializa o site com o sidebar escondido
 window.onload = function() {
-    if (window.innerWidth <= 768) {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.classList.add('hidden');
-    }
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('hidden');
     document.getElementById('prompt-engineering').classList.add('active');
     document.querySelector('.tab-button').classList.add('active');
     document.getElementById('subtitle').textContent = document.querySelector('.tab-button').textContent;
 
-    // Define o volume inicial como 0
-    audio.volume = 0;
+    // Define o comportamento inicial
     hiperfocoButton.onclick = toggleHiperfoco;
 };
