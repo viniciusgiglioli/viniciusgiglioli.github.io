@@ -29,24 +29,23 @@ function switchLanguage(lang) {
     flashcards.forEach(card => {
         const front = card.querySelector('.front');
         const back = card.querySelector('.back');
-        const icons = card.querySelector('.icons');
+        const icon1 = card.getAttribute('data-icon1');
+        const icon2 = card.getAttribute('data-icon2');
+        const color = front.querySelector('i')?.style.color || 'inherit';
+
+        if (!card.hasAttribute('data-original-front')) {
+            card.setAttribute('data-original-front', front.textContent.replace(/<div[^>]*>.*?<\/div>/g, ''));
+            card.setAttribute('data-original-back', back.textContent);
+        }
+
         if (lang === 'en') {
-            front.innerHTML = card.getAttribute('data-front-en') + '<div class="icons"><i class="' + card.getAttribute('data-icon1') + '" style="color: inherit;"></i><i class="' + card.getAttribute('data-icon2') + '" style="color: inherit;"></i></div>';
+            front.innerHTML = (card.getAttribute('data-front-en') || front.textContent) + 
+                `<div class="icons"><i class="${icon1}" style="color: ${color};"></i><i class="${icon2}" style="color: ${color};"></i></div>`;
             back.textContent = card.getAttribute('data-back-en') || back.textContent;
         } else {
-            front.innerHTML = front.getAttribute('data-original-front') + '<div class="icons"><i class="' + card.getAttribute('data-icon1') + '" style="color: inherit;"></i><i class="' + card.getAttribute('data-icon2') + '" style="color: inherit;"></i></div>';
-            back.textContent = back.getAttribute('data-original-back') || back.textContent;
-        }
-    });
-    // Armazena o conteúdo original no próximo clique, se ainda não armazenado
-    flashcards.forEach(card => {
-        const front = card.querySelector('.front');
-        const back = card.querySelector('.back');
-        if (!front.getAttribute('data-original-front')) {
-            front.setAttribute('data-original-front', front.textContent.replace(/<div[^>]*>.*?<\/div>/g, ''));
-        }
-        if (!back.getAttribute('data-original-back')) {
-            back.setAttribute('data-original-back', back.textContent);
+            front.innerHTML = card.getAttribute('data-original-front') + 
+                `<div class="icons"><i class="${icon1}" style="color: ${color};"></i><i class="${icon2}" style="color: ${color};"></i></div>`;
+            back.textContent = card.getAttribute('data-original-back') || back.textContent;
         }
     });
 }
