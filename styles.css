@@ -23,6 +23,7 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 1000;
 }
 
 .lang-button {
@@ -38,6 +39,19 @@ body {
     border-radius: 3px;
 }
 
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
 .sidebar {
     width: 200px;
     padding: 20px;
@@ -46,6 +60,11 @@ body {
     height: 100vh;
     position: sticky;
     top: 0;
+    transition: transform 0.3s;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
 }
 
 .tabs {
@@ -172,4 +191,54 @@ h1 {
 
 .flashcard .icons i {
     font-size: 16px;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 1000;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .content {
+        margin-top: 80px;
+        padding: 10px;
+    }
+    .tab-content.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .flashcard {
+        width: 90%;
+        max-width: 300px;
+        height: 120px;
+        margin: 5px 0;
+    }
+    .flashcard .front, .flashcard .back {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .flashcard .icons i {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .tab-button {
+        font-size: 12px;
+        padding: 8px;
+    }
 }
